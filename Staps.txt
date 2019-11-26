@@ -1,0 +1,14 @@
+Added README.ms file (Description app)
+Added .gitignore file and initial commit
+Added Vagrantfile file by doing initial install (vagrant init)
+Configuring our vagrant box by editing vagrantfile 
+Runing and connectiong to our dev server (vagrant up)
+Install python3.6 and pip3
+Create python virtual environment (mkvirtualenv name & workon name)
+Install required python packages(django and rest django)
+Create django project (django-admin startproject nameproject)
+Create django app (cd nameproject & python manage.py startapp appname)
+Save our requirements in text file (pip freeze > requirements.txt)
+
+
+
