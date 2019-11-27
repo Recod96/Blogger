@@ -1,22 +1,105 @@
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}"/>
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
     <link rel="shortcut icon" href="{% static 'blog/images/sharingan.svg' %}" type="image/x-icon">
     <title>Blogger</title>
 </head>
+
 <body>
-    <h1 class="title">{{title}}</h1>
-    <input type="button" class="btn btn-danger" value="fuck" />
-    
+
+
+
+    <nav class="navbar navbar-default " role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand" href="#">
+                <img width="25px" src="{% static 'blog/images/sharingan.png' %}" style="display: inline-block;">
+                <span style="display: inline-block;" ><b>RC-BLOG</b></span>
+            </a>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home </a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cours<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">Laravel</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Us </a></li>
+                    <li><a href="#">Contact </a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text">Already have an account?</p>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-user-astronaut"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Login via
+                                        <form class="form" role="form" method="post" action="login"
+                                            accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail2"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2"
+                                                    placeholder="Password" required>
+                                                <div class="help-block text-right"><a href="">Forget the password ?</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> keep me logged-in
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        New here ? <a href="#"><b>Join Us</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+
 
     <script src="{% static 'blog/js/jquery-3.4.1.slim.min.js' %}"></script>
     <script src="{% static 'blog/js/popper.min.js' %}"></script>
     <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'blog/js/fontawesome-all.min.js' %}"></script>
 </body>
+
 </html>
