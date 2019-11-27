@@ -15,17 +15,20 @@
 
 
 
+    <!--HEADER-->
+
     <nav class="navbar navbar-default " role="navigation">
-        <div class="container-fluid">
+        <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand" href="#">
                 <img width="25px" src="{% static 'blog/images/sharingan.png' %}" style="display: inline-block;">
-                <span style="display: inline-block;" ><b>RC-BLOG</b></span>
+                <span style="display: inline-block;"><b>RC-BLOG</b></span>
             </a>
 
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home </a></li>
                 </ul>
@@ -45,9 +48,12 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
+
                     <li>
                         <p class="navbar-text">Already have an account?</p>
                     </li>
+
+                    <!--LOGIN FORM-->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-user-astronaut"></i>
@@ -60,12 +66,14 @@
                                         <form class="form" role="form" method="post" action="login"
                                             accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
-                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                                <label class="control-label" for="reenterpassword">Email
+                                                    address:</label>
                                                 <input type="email" class="form-control" id="exampleInputEmail2"
                                                     placeholder="Email address" required>
                                             </div>
                                             <div class="form-group">
-                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                                <label class="control-label" for="reenterpassword">
+                                                    Password:</label>
                                                 <input type="password" class="form-control" id="exampleInputPassword2"
                                                     placeholder="Password" required>
                                                 <div class="help-block text-right"><a href="">Forget the password ?</a>
@@ -81,18 +89,397 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="bottom text-center">
-                                        New here ? <a href="#"><b>Join Us</b></a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--SINGUP FORM-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        SignUp via
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <!-- Sign Up Form -->
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="Email">Email:</label>
+                                                    <div class="controls">
+                                                        <input id="Email" name="Email" class="form-control input-large"
+                                                            type="text" placeholder="JoeSixpack@sixpacksrus.com"
+                                                            required>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="userid">Alias:</label>
+                                                    <div class="controls">
+                                                        <input id="userid" name="userid"
+                                                            class="form-control input-large" type="text"
+                                                            placeholder="JoeSixpack" required="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Password input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="password">Password:</label>
+                                                    <div class="controls">
+                                                        <input id="password" name="password"
+                                                            class="form-control input-large" type="password"
+                                                            placeholder="********" required="">
+                                                        <em>1-8 Characters</em>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="reenterpassword">Re-Enter
+                                                        Password:</label>
+                                                    <div class="controls">
+                                                        <input id="reenterpassword" class="form-control input-large"
+                                                            name="reenterpassword" type="password"
+                                                            placeholder="********" required="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Multiple Radios (inline) -->
+                                                <br>
+
+                                                <!-- Button -->
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-success btn-block">Sign
+                                                            up</button>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+                                        </form>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </li>
+
+                    <!--SEARCH FORM-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-search"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Search
+                                        <form class="form" role="form" method="post" action="search="
+                                            accept-charset="UTF-8" id="login-nav">
+                                            <form class="form-inline my-2 my-lg-0">
+                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                    aria-label="Search">
+                                                <br>
+                                                <input class="form-control mr-sm-2 btn btn-success" type="submit"
+                                                    placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
                 </ul>
+
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
+    <!--MODEL SIGNUP-->
+
+
+    <!--BODY-->
+
+    <section>
+
+        <div class="container">
+
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Fluid jumbotron</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its
+                        parent.</p>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!--POSTES-->
+                <div class="col-md-9">
+
+                    <div class="col-md-12 post-item">
+                        <h1>Alice in Wonderland, part dos</h1>
+                        <div class="col-md-3">
+                            ​<picture>
+                                <img src="https://static.lexpress.fr/medias_11587/w_2048,h_1146,c_crop,x_0,y_225/w_480,h_270,c_fill,g_north/v1503413162/ia-intelligence-artificielle-algorithmes-logiciels-1_5932708.jpg"
+                                    class="img-thumbnail" alt="...">
+                            </picture>
+                        </div>
+                        <div class="col-md-9">
+                            <p>'You ought to be ashamed of yourself for asking such a simple question,' added the
+                                Gryphon;
+                                and then they both sat silent and looked at poor Alice, who felt ready to sink into the
+                                earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all
+                                day
+                                about it!' and he went on in these words:
+                                'Yes, we went to school in the sea, though you mayn't believe it—'
+                                'I never said I didn't!' interrupted Alice.
+                                'You did,' said the Mock Turtle.</p>
+                            <div>
+                                <span class="badge">Posted 2012-08-02 20:47:04</span>
+                                <div class="pull-right"><span class="label label-default">alice</span> <span
+                                        class="label label-primary">story</span> <span
+                                        class="label label-success">blog</span> <span
+                                        class="label label-info">personal</span> <span
+                                        class="label label-warning">Warning</span>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-12 post-item">
+                        <h1>Alice in Wonderland, part dos</h1>
+                        <div class="col-md-3">
+                            ​<picture>
+                                <img src="https://static.lexpress.fr/medias_11587/w_2048,h_1146,c_crop,x_0,y_225/w_480,h_270,c_fill,g_north/v1503413162/ia-intelligence-artificielle-algorithmes-logiciels-1_5932708.jpg"
+                                    class="img-thumbnail" alt="...">
+                            </picture>
+                        </div>
+                        <div class="col-md-9">
+                            <p>'You ought to be ashamed of yourself for asking such a simple question,' added the
+                                Gryphon;
+                                and then they both sat silent and looked at poor Alice, who felt ready to sink into the
+                                earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all
+                                day
+                                about it!' and he went on in these words:
+                                'Yes, we went to school in the sea, though you mayn't believe it—'
+                                'I never said I didn't!' interrupted Alice.
+                                'You did,' said the Mock Turtle.</p>
+                            <div>
+                                <span class="badge">Posted 2012-08-02 20:47:04</span>
+                                <div class="pull-right"><span class="label label-default">alice</span> <span
+                                        class="label label-primary">story</span> <span
+                                        class="label label-success">blog</span> <span
+                                        class="label label-info">personal</span> <span
+                                        class="label label-warning">Warning</span>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-12 post-item">
+                        <h1>Alice in Wonderland, part dos</h1>
+                        <div class="col-md-3">
+                            ​<picture>
+                                <img src="https://static.lexpress.fr/medias_11587/w_2048,h_1146,c_crop,x_0,y_225/w_480,h_270,c_fill,g_north/v1503413162/ia-intelligence-artificielle-algorithmes-logiciels-1_5932708.jpg"
+                                    class="img-thumbnail" alt="...">
+                            </picture>
+                        </div>
+                        <div class="col-md-9">
+                            <p>'You ought to be ashamed of yourself for asking such a simple question,' added the
+                                Gryphon;
+                                and then they both sat silent and looked at poor Alice, who felt ready to sink into the
+                                earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all
+                                day
+                                about it!' and he went on in these words:
+                                'Yes, we went to school in the sea, though you mayn't believe it—'
+                                'I never said I didn't!' interrupted Alice.
+                                'You did,' said the Mock Turtle.</p>
+                            <div>
+                                <span class="badge">Posted 2012-08-02 20:47:04</span>
+                                <div class="pull-right"><span class="label label-default">alice</span> <span
+                                        class="label label-primary">story</span> <span
+                                        class="label label-success">blog</span> <span
+                                        class="label label-info">personal</span> <span
+                                        class="label label-warning">Warning</span>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+
+                    <div class="col-md-12" style="margin-top: 20px;">
+                        <div class="pricing-table">
+                            <div class="panel panel-primary" style="border: none;">
+                                <div class="controle-header panel-heading panel-heading-landing">
+                                    <h1 class="panel-title panel-title-landing  text-center">
+                                        LASTES COMMENTS
+                                    </h1>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">30+ Accounts</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">30+ Accounts</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">Lead Required</a> </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="margin-top: 20px;">
+                        <div class="pricing-table">
+                            <div class="panel panel-primary" style="border: none;">
+                                <div class="controle-header panel-heading panel-heading-landing">
+                                    <h1 class="panel-title panel-title-landing  text-center">
+                                        LASTES POST
+                                    </h1>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">30+ Accounts</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">30+ Accounts</a> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50px"><i class="fas fa-mouse-pointer"></i></td>
+                                        <td><a href="">Lead Required</a> </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <br>
+            <div class="row">
+                <h3 class="text-center">Our Amazing Team</h3>
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        ​
+                        <img width="125px"
+                            src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        ​
+                        <img width="125px"
+                            src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="card">
+                        ​
+                        <img width="125px"
+                            src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png" alt="...">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i
+                                    class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a
+                        Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp,
+                        Minneapolis, MN]</p>
+                    <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com"
+                            target="_blank">Sunlimetech</a></p>
+                </div>
+                </hr>
+            </div>
+            <br><br>
+        </div>
+    </section>
 
 
 
