@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Abril_Fatface';
+    src: url('../fonts/Abril_Fatface/AbrilFatface-Regular.ttf') format("truetype"),
+    local('Abril_Fatface');
+}
+@font-face {
+    font-family: 'Amatic_SC';
+    src: url('../fonts/Amatic_SC/AmaticSC-Bold.ttf') format("truetype"),
+    local('Amatic_SC');
+}
+@font-face {
+    font-family: 'Dancing_Script';
+    src: url('../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf') format("truetype"),
+    local('Dancing_Script');
+}
+@font-face {
+    font-family: 'Indie_Flower';
+    src: url('../fonts/Indie_Flower/IndieFlower-Regular.ttf') format("truetype"),
+    local('Indie_Flower');
+}
+
+body{
+    font-family: 'Indie_Flower',sans-serif;
+}
