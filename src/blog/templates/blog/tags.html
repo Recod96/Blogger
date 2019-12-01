@@ -1,0 +1,59 @@
+<div class="col-md-12">
+    <div class="pricing-table">
+        <div class="panel panel-primary" style="border: none;">
+
+            <div class="well tags">
+                <h2>Tags</h2>
+                {% for tag in tags %}
+                <a href="http://www.jquery2dotnet.com/search/label/css"  title="{{tag.description}}"  class="tag success">{{tag.text}}</a>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="pricing-table">
+        <div class="panel panel-primary" style="border: none;">
+
+            <div class="well tags">
+                <h2>Categories</h2>
+                {% for categorie in categories %}
+                <a href="http://www.jquery2dotnet.com/search/label/css" title="{{categorie.description}}" class="tag success">{{categorie.title}}</a>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12">
+
+    <div class="well">
+        <h2>Subscription Box</h2>
+        <p>Form Description Goes here</p>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="well">
+        <h2>Share love</h2>
+        <ul class="list-inline">
+            <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+            <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+            <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+            <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+
+        </ul>
+
+    </div>
+</div>

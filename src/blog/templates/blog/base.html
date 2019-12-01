@@ -1,0 +1,319 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+    <link href="{% static 'blog/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+    <link rel="shortcut icon" href="{% static 'blog/images/sharingan.svg' %}" type="image/x-icon">
+    
+    {% if title %}
+     <title>RC-BLOG | {{ title }} </title>
+     {% else %}
+     <title>RC-BLOG</title>
+     {% endif %}
+</head>
+
+<body onload="RandomColorTags">
+
+
+
+    <!--HEADER-->
+
+    <nav class="navbar navbar-default " role="navigation">
+
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">RC-BLOG</a>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home </a></li>
+                </ul>
+
+                <ul class="nav navbar-nav">
+<!--
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cours<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">Laravel</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </li>
+-->
+                    <li><a href="/#team">Team </a></li>
+                    <li><a href="/contact">Contact </a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <p class="navbar-text">Already have an account?</p>
+                    </li>
+
+                    <!--LOGIN FORM-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-user-astronaut"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Login via
+                                        <form class="form" role="form" method="post" action="login"
+                                            accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="control-label" for="reenterpassword">Email
+                                                    address:</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail2"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label" for="reenterpassword">
+                                                    Password:</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2"
+                                                    placeholder="Password" required>
+                                                <div class="help-block text-right"><a href="">Forget the password ?</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> keep me logged-in
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--SINGUP FORM-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-user-plus"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        SignUp via
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <!-- Sign Up Form -->
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="Email">Email:</label>
+                                                    <div class="controls">
+                                                        <input id="Email" name="Email" class="form-control input-large"
+                                                            type="text" placeholder="JoeSixpack@sixpacksrus.com"
+                                                            required>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="userid">Alias:</label>
+                                                    <div class="controls">
+                                                        <input id="userid" name="userid"
+                                                            class="form-control input-large" type="text"
+                                                            placeholder="JoeSixpack" required="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Password input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="password">Password:</label>
+                                                    <div class="controls">
+                                                        <input id="password" name="password"
+                                                            class="form-control input-large" type="password"
+                                                            placeholder="********" required="">
+                                                        <em>1-8 Characters</em>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Text input-->
+                                                <div class="control-group">
+                                                    <label class="control-label" for="reenterpassword">Re-Enter
+                                                        Password:</label>
+                                                    <div class="controls">
+                                                        <input id="reenterpassword" class="form-control input-large"
+                                                            name="reenterpassword" type="password"
+                                                            placeholder="********" required="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Multiple Radios (inline) -->
+                                                <br>
+
+                                                <!-- Button -->
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-success btn-block">Sign
+                                                            up</button>
+                                                    </div>
+
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--SEARCH FORM-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fas fa-search"></i>
+                            <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Search
+                                        <form class="form" role="form" method="post" action="search="
+                                            accept-charset="UTF-8" id="login-nav">
+                                            <form class="form-inline my-2 my-lg-0">
+                                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                                    aria-label="Search">
+                                                <br>
+                                                <input class="form-control mr-sm-2 btn btn-success" type="submit"
+                                                    placeholder="Search" aria-label="Search">
+                                            </form>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!--MODEL SIGNUP-->
+
+
+    <!--BODY-->
+
+    <section>
+
+        <div class="container">
+            {% block jumbotron %}
+
+            {% endblock jumbotron  %}
+
+
+            <div class="row">
+                <!--POSTES-->
+                <div class="col-md-9">
+
+                    {% block postes %}
+
+                    {% endblock postes %}
+ 
+
+                </div>
+
+                <div class="col-md-3">
+
+                    {% block rightbar %}
+
+                    {% endblock rightbar %}
+
+                </div>
+
+            </div>
+
+            {% block content %}
+
+            {% endblock content %}
+
+        </div>
+        
+    </section>
+
+    <section>
+        <div class="container">
+            <br>
+
+            {% block ourteam %}
+
+            {% endblock ourteam %}
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <br>
+            <hr>
+            <br>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i
+                                    class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a
+                        Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp,
+                        Minneapolis, MN]</p>
+                    <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com"
+                            target="_blank">Sunlimetech</a></p>
+                </div>
+                </hr>
+            </div>
+            <br><br>
+        </div>
+    </section>
+
+    {% block buttonjs %}
+     {% endblock buttonjs %}
+
+    <script src="{% static 'blog/js/jquery-3.4.1.slim.min.js' %}"></script>
+    <script src="{% static 'blog/js/popper.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'blog/js/fontawesome-all.min.js' %}"></script>
+    <script src="{% static 'blog/js/main.js' %}"></script>
+</body>
+
+</html>

@@ -122,9 +122,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #if u want to make static folders for all project u can use
-"""
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
-    'Users/ReCoD/PythonWorkSpace/Blogger/src/static',
+    'Users/ReCoD/PythonWorkSpace/Blogger/src/static/',
 ]
-"""
+
+ 

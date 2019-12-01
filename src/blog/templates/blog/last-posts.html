@@ -1,0 +1,20 @@
+<div class="col-md-12">
+    <div class="pricing-table">
+        <div class="panel panel-primary" style="border: none;">
+
+            <div class="well">
+                <h2>Lastes Posts</h2>
+                {% for post in postslast %}
+                <a href="details/{{post.id}}">
+                    <h5 class="title">{{post.title}}</h5>
+                </a>
+                <p><small><i class="fa fa-calendar" data-original-title="" title=""></i>
+                        {{post.post_date}}</small></p>
+
+                <hr>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,393 @@
+{% extends 'blog/base.html' %}
+
+<!--JUMBTRON-->
+{% block jumbotron %}
+<section class="banner-section">
+</section>
+{% endblock jumbotron  %}
+<!--END JUMBTRON-->
+
+<!--POSTS-->
+{% block postes %}
+<style>
+    section {
+        width: 100%;
+        float: left;
+    }
+
+
+    .post-title-block {
+        padding: 40px 0;
+    }
+
+    .post-title-block h1 {
+        color: black;
+        font-size: 85px;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .post-title-block li {
+        font-size: 20px;
+        color: darkgray;
+    }
+
+    .image-block {
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-link {
+        float: left;
+        width: 100%;
+        background: #222222;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .footer-link a {
+        color: #A9FD00;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+</style>
+
+<section class="post-content-section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 post-title-block">
+
+                <h1 class="text-center">{{post.title}}</h1>
+                <ul class="list-inline text-center">
+                    <li>Author : <a href="#{{post.author.id}}"> {{post.author}} </a> |</li>
+                    <li>Category :
+                        {% for categorie in post.categories.all %}
+                        <a class="tag info" href="">{{categorie}}</a>
+                        {% endfor %}
+
+                        | </li>
+                    <li>{{post.post_date}} |</li>
+                </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                {% for item in post.postparagraphs.all %}
+
+                <h2 class="lead" id="{{ item.header }}"> {{item.header}} </h2>
+
+                <p> {{item.text}} </p>
+
+                <div class="image-block">
+                    <img src="../{{ item.image }}" class="img-responsive">
+                </div>
+
+                {% endfor %}
+
+            </div>
+            <div class="col-lg-3  col-md-3 col-sm-12">
+                <div class="well">
+                    <h2>Subscription Box</h2>
+                    <p>Form Description Goes here</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="well">
+                    <h2>Share love</h2>
+                    <ul class="list-inline">
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+                        <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></li>
+
+                    </ul>
+                </div>
+                <div class="well">
+                    <h2>About {{post.author}}</h2>
+                    <img src="" class="img-rounded" />
+                    <a href="#{{post.author.id}}" class="btn btn-default">View Profil</a>
+                </div>
+                <div class="well">
+                    <h2>Hearders</h2>
+                    {% for item in post.postparagraphs.all %}
+                    <a class="list-group-item" href="#{{ item.header }}">
+                        <h4 class="list-group-item-heading">{{ item.header }}</h4>
+                        {% endfor %}
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div> <!-- /container -->
+</section>
+
+
+
+
+{% endblock postes %}
+<!--END POSTS-->
+
+
+
+
+{% block ourteam %}
+<h2 class="page-header">Comments</h2>
+
+<div class="col-md-9">
+    {% for comment in post.comments.all %}
+    <div class="comment-wrap" id="comment-box">
+        <div class="photo">
+            <div class="avatar"
+                style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')">
+            </div>
+        </div>
+        <div class="comment-block">
+            <p class="comment-text"> {{comment.text}} </p>
+            <div class="bottom-comment">
+                <div class="comment-date"> {{comment.comment_date}}</div>
+
+            </div>
+            <ul class="pull-right">
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Loved" style="color: red;"><i
+                        class="fa fa-heart"></i> 20</a>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="comments" id="main">
+        <div class="comment-wrap">
+            <div class="photo">
+                <div class="avatar"
+                    style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')">
+                </div>
+            </div>
+            <div class="comment-block">
+
+                <textarea name="" id="commentarea" cols="30" rows="3" placeholder="Add comment..."></textarea>
+                <button class="btn btn-success green pull-right" id="sendComment" onclick="addcomment()"><i
+                        class="fa fa-share"></i>
+                    POST</button>
+
+            </div>
+        </div>
+        <script>
+            var addcomment = () => {
+
+
+                var time = 'Aug 24, 2014 @ 2:35 PM'
+                var comment = document.getElementById("commentarea").value;
+                var src = 'https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg'
+
+                if (comment == "") {
+                    alert('comment empty !')
+                } else {
+
+
+                    var main = document.getElementById('main')
+
+                    var newP = document.createElement('p')
+                    var textP = document.createTextNode(comment)
+                    newP.setAttribute('class', 'comment-text')
+                    newP.appendChild(textP)  //commentaire-----------------------------
+
+                    var div = document.createElement('div')
+                    div.setAttribute('class', 'comment-wrap')
+                    div.setAttribute('id', 'comment-box')//Global div---------------------
+                    div.setAttribute('style', '')
+
+
+                    var Photo = document.createElement('div')
+                    Photo.setAttribute('class', 'photo')
+                    var divPhoto = document.createElement('div')
+                    divPhoto.setAttribute('class', 'avatar')
+                    divPhoto.setAttribute('style', "background-image: url('" + src + "')")//Photo div
+                    Photo.appendChild(divPhoto)//--------------------------
+
+                    var divcomment = document.createElement('div')
+                    divcomment.setAttribute('class', 'comment-block')
+                    divcomment.setAttribute('style', 'BACKGROUND-COLOR: aliceblue;')
+                    divcomment.setAttribute('id', 'comment-box')//dic comment (date)
+
+                    var divDate = document.createElement('div')
+                    divDate.setAttribute('class', 'bottom-comment')//date div
+
+                    var divDate1 = document.createElement('div')
+                    divDate1.setAttribute('class', 'comment-date')//instade date 1
+                    divDate.innerHTML = time
+                    divDate.appendChild(divDate1)
+
+
+                    var a1 = document.createElement('a')
+                    var i1 = document.createElement('i')
+                    i1.setAttribute('class', 'fa fa-comments')
+                    i1.setAttribute('style', "color: blue")
+                    //i1.innerText = 21
+
+
+
+                    var a2 = document.createElement('a')
+                    var i2 = document.createElement('i')
+                    i2.setAttribute('class', 'fa fa-heart')
+                    i2.setAttribute('style', "color: red")
+                    //i2.innerText = 12
+
+                    var ul = document.createElement('ul')
+                    ul.setAttribute('class', 'pull-right')
+
+
+
+
+                    a1.appendChild(i1)
+                    a2.appendChild(i2)
+                    ul.appendChild(a1)
+                    ul.appendChild(a2)
+
+                    divcomment.appendChild(newP)
+                    divcomment.appendChild(divDate)
+                    //divcomment.appendChild(ul)
+
+                    div.appendChild(Photo)
+                    div.appendChild(divcomment)
+
+                    main.outerHTML = div.outerHTML + main.outerHTML
+
+                }
+
+            }
+
+
+        </script>
+
+
+
+
+    </div>
+
+</div>
+
+</div>
+
+<style>
+    .comments input,
+    .comments textarea {
+        outline: none;
+        border: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        color: #555f77;
+    }
+
+    .comments input::-webkit-input-placeholder,
+    .comments textarea::-webkit-input-placeholder {
+        color: #ced2db;
+    }
+
+    .comments input::-moz-placeholder,
+    .comments textarea::-moz-placeholder {
+        color: #ced2db;
+    }
+
+    .comments input:-moz-placeholder,
+    .comments textarea:-moz-placeholder {
+        color: #ced2db;
+    }
+
+    .comments input:-ms-input-placeholder,
+    .comments textarea:-ms-input-placeholder {
+        color: #ced2db;
+    }
+
+
+
+
+    .comment-wrap {
+        margin-bottom: 1.25rem;
+        display: table;
+        width: 100%;
+        min-height: 5.3125rem;
+    }
+
+    .photo {
+        padding-top: 0.625rem;
+        display: table-cell;
+        padding-right: 1.9rem;
+        width: .5rem;
+    }
+
+    .photo .avatar {
+        height: 5.25rem;
+        width: 5.25rem;
+        border-radius: 50%;
+        background-size: contain;
+    }
+
+    .comment-block {
+        padding: 1rem;
+        margin: 2rem;
+        ;
+        background-color: #fff;
+        display: table-cell;
+        vertical-align: top;
+        border-radius: 0.1875rem;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .comment-block textarea {
+        width: 100%;
+        resize: none;
+    }
+
+    .comment-text {
+        margin-bottom: 1.25rem;
+    }
+
+    .bottom-comment {
+        color: #acb4c2;
+        font-size: 0.875rem;
+    }
+
+    .comment-date {
+        float: left;
+    }
+
+    .comment-actions {
+        float: right;
+    }
+
+    .comment-actions li {
+        display: inline;
+        margin: -2px;
+        cursor: pointer;
+    }
+
+    .comment-actions li.complain {
+        padding-right: 0.75rem;
+        border-right: 1px solid #e1e5eb;
+    }
+
+    .comment-actions li.reply {
+        padding-left: 0.75rem;
+        padding-right: 0.125rem;
+    }
+
+    .comment-actions li:hover {
+        color: #0095ff;
+    }
+</style>
+{% endblock ourteam %}
+
+
+<!--ENEMATION JAVASCRIPT-->
+{% block buttonjs %}
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"
+    title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><i class="fas fa-eject"></i></a>
+{% endblock buttonjs %}
